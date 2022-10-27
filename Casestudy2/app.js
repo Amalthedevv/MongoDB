@@ -129,7 +129,7 @@ app.put('/api/employeelist',(req,res)=>{
 
     try {
 
-        EmployeeData.findByIdAndUpdate({"_id":req.params.id}).then(function(data){   
+        EmployeeData.findByIdAndUpdate(req.body._id, {$set:req.body}).then(function(data){   
         res.send(data);
     })}
     
